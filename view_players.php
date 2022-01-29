@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="functionalpage.css">
     <title>Document</title>
     <style>
         table {
@@ -17,27 +17,22 @@
 </head>
 
 <body>
-    <img id="black-background" src="images/black.jpg" alt="">
 
     <?php
         $handler = fopen("Basket1.txt", "r");
-        $i = 0;
 
         echo "<table>";
 
         while (!feof($handler)){
             $content = fgets($handler);
-            $array = explode(" ", $content);
-
+            $player_data = explode(" ", $content);
             echo "<tr>";
 
-            echo "<td>".$array[$i++]."</td>";
-            echo "<td>".$array[$i++]."</td>";
-            echo "<td>".$array[$i++]."</td>";
+            echo "<td>".$player_data[0]."</td>";
+            echo "<td>".$player_data[1]."</td>";
+            echo "<td>".$player_data[2]."</td>";
 
             echo "</tr>";
-
-            $i = 0;
         };
 
         echo "</table>"
