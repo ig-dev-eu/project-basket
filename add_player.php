@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="functionalpage.css">
     <style>
         form {
             width: 50%;
@@ -38,8 +38,6 @@
 </head>
 
 <body>
-    <img id="black-background" src="images/black.jpg">
-
     <form>
         <div class="mb-3">
             <label for="name" class="form-label">Nome</label>
