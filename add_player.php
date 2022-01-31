@@ -12,7 +12,7 @@
         form {
             width: 50%;
             color: white;
-            font-size: 1.7rem;
+            font-size: 1.5rem;
         }
 
         form button {
@@ -26,7 +26,7 @@
         .btn {
             color: var(--basket-orange);
             border-color: var(--basket-orange);
-            font-size: 1.7rem;
+            font-size: 1.5rem;
             transition: 0.2s;
         }
 
@@ -48,15 +48,16 @@
             <label for="surname" class="form-label">Cognome</label>
             <input type="text" class="form-control" id="surname">
         </div>
+        <div class="">
+            <label for="height" class="form-label">Altezza (cm)</label>
+        </div>
         <div class="row">
             <div class="col">
                 <div class="mb-3">
-                    <label for="height" class="form-label">Altezza (cm)</label>
                     <input type="number" class="form-control" id="height">
                 </div>
             </div>
             <div class="col-8">
-                <label for="test" class="form-label"></label>
                 <button type="submit" class="btn btn-outline-primary" id="test">Invio</button>
             </div>
         </div>
