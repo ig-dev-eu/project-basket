@@ -9,7 +9,7 @@
     <title>View Players By Height</title>
     <style>
         form {
-            width: 35%;
+            width: 40%;
         }
 
         .btn 
@@ -39,7 +39,7 @@ if(!$is_first_page){
         $content = fgets($handler);
         $player_data = explode(" ", $content);
         if($player_data[0] != ""){
-            if($player_data[2] == $height){
+            if(trim($player_data[2]) == $height){
                 $players[] = $player_data;
             }
         }
@@ -51,28 +51,31 @@ if(!$is_first_page){
 ?>
 
 <body>
-    <h1 style="margin-bottom: 30px;">View Basketball Players By Height</h1>
+    <h1 style="margin-bottom: 30px;">Basketball Players By Height</h1>
     <form action="view_players_by_height.php" method="GET">
         <div class="row">
             <div class="col">
                 <div class="mb-3">
                     <input type="number" class="form-control" 
-                    id="height" min="100" max="300" name="height">
+                    id="height" min="100" max="300" name="height" placeholder="Height">
                 </div>
             </div>
             <div class="col-8">
                 <button type="submit" class="btn btn-outline-primary">View Table</button>
             </div>
         </div>
-    </form>
+    
 
 <?php
 if(!$is_first_page){
     if(empty($players)){
         echo "  <div style=\"margin-top: 40px;\" class=\"alert alert-warning\" role=\"alert\">
                     NOBODY HAS THIS HEIGHT
-                </div>";
+                </div>
+                </form>";
     } else {
+        echo "</form>";
+
         echo "<table>";
         
         echo "<tr>";
@@ -87,7 +90,6 @@ if(!$is_first_page){
             echo "<td>".$player[0]."</td>";
             echo "<td>".$player[1]."</td>";
             echo "<td>".$player[2]."</td>";
-
             echo "</tr>";
         }
 
